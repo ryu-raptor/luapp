@@ -36,7 +36,7 @@ $ ./genluapp.sh [/path/to/your/lua/script/directory] [your_entry_point_script.lu
 app.sh is a bootstrap shell script which sets LUA_PATH so that lua interpreter can find modules.
 The symlink is a symlink to app.sh. You can place this file to the directory such as .local/bin
 
-Now you can
+## Now you can
 ~~~
 $ /path/to/your/app.sh files...
 done.
