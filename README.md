@@ -43,3 +43,14 @@ $ /path/to/your/app.sh files...
 done.
 ~~~
 nice.
+
+## Notice
+### If your scripts refers resources in their directories, this script can't go with.
+Because this script just modifies `LUA_PATH` so resource files can't be found from them.
+
+To avoid this problem, you can insert `cd ``dirname $0`` ` at head of app.sh. However this cause files on current directory unavailable. Because this is eqivalent to
+~~~
+$ cd /your/script/directory
+$ lua yours.lua files... (files aren't located this directory)
+file not found: files...
+~~~
