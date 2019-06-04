@@ -1,5 +1,5 @@
 # luapp
-Generates bootstrap shell script for lua script which consists of multiple sciprt modules.
+Generates bootstrap shell script for lua program which consists of multiple sciprt modules.
 
 ## Motivation
 When you write lua scripts consists of some modules, and when you want to run the script outside the directory scripts locate...
