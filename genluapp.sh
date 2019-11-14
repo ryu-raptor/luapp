@@ -25,8 +25,9 @@ fi
 # build app.sh
 cat <<EOF > app.sh
 #!/bin/bash
-appdir=\`dirname \$0\`
-LUA_PATH="\${LUA_PATH};\${appdir}/?.lua"
+apppath=\`which \$0\`
+appdir=\$(dirname \$(realpath \${apppath}))
+LUA_PATH="\${LUA_PATH};\${appdir}/?.lua;./?.lua"
 export LUA_PATH
 lua \${appdir}/${scriptName}.lua "\$@"
 EOF
@@ -36,6 +37,6 @@ chmod u+x app.sh
 
 # then make symlink to app.sh with name of appdir
 appName=`basename $(pwd)`
-target=`readlink -f app.sh`
+target=`realpath app.sh`
 ln -s $target $appName
 
